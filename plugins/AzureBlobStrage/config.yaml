@@ -1,0 +1,25 @@
+name: AzureBlobStrage
+id:   AzureBlobStrage
+key:  azureblobstrage
+version: 0.1
+author_link: https://alfasado.net/
+author_name: Alfasado Inc.
+l10n_class: AzureBlobStrage::L10N
+description: <__trans phrase="Sync files between MT and Winsows Azure Blob strage.">
+config_settings:
+    AzureBlobAccountName:
+    AzureBlobPrimaryAccessKey:
+    AzureBlobContainerName:
+    AzureBlobDirName:
+    AzureBlobSyncBasePath:
+    AzureBlobAPISchema:
+    AzureRealtimeSync:
+        default: 1
+callbacks:
+    MT::FileMgr::Local::put_data: $azureblobstrage::AzureBlobStrage::Callbacks::_put_data
+    MT::FileMgr::Local::rename: $azureblobstrage::AzureBlobStrage::Callbacks::_put_data
+    MT::FileMgr::Local::delete: $azureblobstrage::AzureBlobStrage::Callbacks::_delete
+task_workers:
+    worker_deploy2azure:
+        label: 'Sync files between MT and Winsows Azure Blob strage.'
+        class: 'AzureBlobStrage::Worker::Sync'
