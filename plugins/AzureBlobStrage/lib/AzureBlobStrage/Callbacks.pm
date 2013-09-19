@@ -15,7 +15,7 @@ sub _put_data {
         return;
     }
     my $data = { action => 'upload', path => $to };
-    if ( MT->config( 'AzureRealtimeSync' ) ) {
+    if ( MT->config( 'AzureBlobRealtimeSync' ) ) {
         my $dirname = MT->config( 'AzureBlobDirName' ) || '';
         my $search_path = quotemeta( $base_path );
         my $blob = _blob();
@@ -47,7 +47,7 @@ sub _delete {
     if ( $file !~ /^$search_path/ ) {
         return;
     }
-    if ( MT->config( 'AzureRealtimeSync' ) ) {
+    if ( MT->config( 'AzureBlobRealtimeSync' ) ) {
         my $dirname = MT->config( 'AzureBlobDirName' ) || '';
         my $blob = _blob();
         my $blob_path = $file;
