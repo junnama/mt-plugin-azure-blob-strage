@@ -13,7 +13,7 @@ config_settings:
     AzureBlobDirName:
     AzureBlobSyncBasePath:
     AzureBlobAPISchema:
-    AzureRealtimeSync:
+    AzureBlobRealtimeSync:
         default: 1
 callbacks:
     MT::FileMgr::Local::put_data: $azureblobstrage::AzureBlobStrage::Callbacks::_put_data
