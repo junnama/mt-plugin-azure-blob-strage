@@ -2,8 +2,8 @@ name: AzureBlobStrage
 id:   AzureBlobStrage
 key:  azureblobstrage
 version: 0.1
-author_link: https://alfasado.net/
-author_name: Alfasado Inc.
+author_link: https://www.facebook.com/junnama.noda
+author_name: Junnama Noda
 l10n_class: AzureBlobStrage::L10N
 description: <__trans phrase="Sync files between MT and Winsows Azure Blob strage.">
 config_settings:
